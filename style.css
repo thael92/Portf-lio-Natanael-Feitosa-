@@ -1191,6 +1191,11 @@ footer {
     nav ul li a:hover::before {
         transform: translateY(-50%) scale(1);
     }
+
+    .tel-contato{
+        position: relative;
+    left: 18%;
+    }
 }
 .tel-contato{
     color: #fff;

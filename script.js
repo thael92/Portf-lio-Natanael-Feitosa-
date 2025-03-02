@@ -148,8 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const typed = new Typed('.typing', {
         strings: [
             'Front-End',
-            'Back-End',
-            'Full-Stack',
+            'Back-End',            
             'UI/UX Designer',
             'Criador de Experiências Digitais'
         ],
