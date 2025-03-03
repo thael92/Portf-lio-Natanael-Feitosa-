@@ -1,113 +1,7 @@
 // Inicialização de elementos quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
-    // Configuração Particles.js para o fundo animado
-    particlesJS('particles-js', {
-        particles: {
-            number: {
-                value: 80,
-                density: {
-                    enable: true,
-                    value_area: 800
-                }
-            },
-            color: {
-                value: "#00bfff"
-            },
-            shape: {
-                type: "circle",
-                stroke: {
-                    width: 0,
-                    color: "#000000"
-                },
-            },
-            opacity: {
-                value: 0.5,
-                random: true,
-                anim: {
-                    enable: true,
-                    speed: 1,
-                    opacity_min: 0.1,
-                    sync: false
-                }
-            },
-            size: {
-                value: 3,
-                random: true,
-                anim: {
-                    enable: true,
-                    speed: 2,
-                    size_min: 0.1,
-                    sync: false
-                }
-            },
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: "#00bfff",
-                opacity: 0.4,
-                width: 1
-            },
-            move: {
-                enable: true,
-                speed: 1,
-                direction: "none",
-                random: true,
-                straight: false,
-                out_mode: "out",
-                bounce: false,
-            }
-        },
-        interactivity: {
-            detect_on: "canvas",
-            events: {
-                onhover: {
-                    enable: true,
-                    mode: "grab"
-                },
-                onclick: {
-                    enable: true,
-                    mode: "push"
-                },
-                resize: true
-            },
-            modes: {
-                grab: {
-                    distance: 140,
-                    line_linked: {
-                        opacity: 1
-                    }
-                },
-                push: {
-                    particles_nb: 4
-                }
-            }
-        },
-        retina_detect: true
-    });
-
-    // Inicialização do cursor personalizado
-    initCustomCursor();
-
-    // Iniciar efeito de digitação no hero section
-    initTypingEffect();
-
-    // Inicialização do carrossel de projetos
-    initProjectsCarousel();
-
-    // Filtro de projetos
-    initProjectsFilter();
-
-    // Animação de estatísticas (contador)
-    initStatsCounter();
-
-    // Inicialização de animações ao scroll
-    initScrollAnimations();
-
-    // Navegação mobile (menu hamburguer)
-    initMobileNav();
-
-    // Formulário de contato com validação
-    initContactForm();
+   
+    
 });
 
 // Cursor personalizado
@@ -640,12 +534,12 @@ const ctx = canvas.getContext('2d');
 canvas.width = canvas.offsetWidth;
 canvas.height = canvas.offsetHeight;
 
-const chars = '01';
+const characters = '010100001010100010101000011010111110001010101010101011000010';
 const fontSize = 10;
 const columns = canvas.width / fontSize;
 const drops = [];
 
-for (let i = 0; i < columns; i++) {
+for(let i = 0; i < columns; i++) {
     drops[i] = 1;
 }
 
@@ -653,14 +547,14 @@ function drawMatrix() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    ctx.fillStyle = '#00b4ff';
+    ctx.fillStyle = '#0F0';
     ctx.font = fontSize + 'px monospace';
     
-    for (let i = 0; i < drops.length; i++) {
-        const text = chars[Math.floor(Math.random() * chars.length)];
+    for(let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
         
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
             drops[i] = 0;
         }
         drops[i]++;
@@ -668,7 +562,6 @@ function drawMatrix() {
 }
 
 setInterval(drawMatrix, 50);
-
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('nav ul');
 
@@ -692,3 +585,7 @@ document.addEventListener('click', (e) => {
         navMenu.classList.remove('active');
     }
 });
+
+
+
+
